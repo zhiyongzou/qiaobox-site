@@ -297,6 +297,70 @@ img {
   color: var(--purple);
 }
 
+.markdown-showcase {
+  border-top: 1px solid var(--line);
+}
+
+.markdown-layout {
+  display: grid;
+  grid-template-columns: minmax(360px, 0.95fr) minmax(0, 1.05fr);
+  align-items: center;
+  gap: 42px;
+}
+
+.markdown-visual {
+  overflow: hidden;
+  border: 1px solid rgba(111, 128, 151, 0.25);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.markdown-visual img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: top left;
+}
+
+.markdown-content h2 {
+  margin: 0 0 14px;
+  font-size: 36px;
+  line-height: 1.2;
+  letter-spacing: 0;
+}
+
+.markdown-points {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 28px;
+  gap: 14px;
+}
+
+.markdown-points article {
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.markdown-points h3 {
+  margin: 0 0 8px;
+  font-size: 18px;
+}
+
+.markdown-points p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.markdown-tags {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 22px;
+  gap: 10px;
+}
+
 .download-band {
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
@@ -425,6 +489,19 @@ img {
     grid-template-columns: 1fr;
   }
 
+  .markdown-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .markdown-visual {
+    width: min(100%, 620px);
+    margin: 0 auto;
+  }
+
+  .markdown-points {
+    grid-template-columns: 1fr;
+  }
+
   .download-inner {
     grid-template-columns: 1fr;
   }
@@ -492,6 +569,7 @@ img {
   }
 
   .section h2,
+  .markdown-content h2,
   .download-inner h2 {
     font-size: 28px;
   }
