@@ -1,0 +1,4 @@
+CREATE TABLE IF NOT EXISTS visit_counter (
+  name TEXT PRIMARY KEY,
+  count INTEGER NOT NULL DEFAULT 0
+);

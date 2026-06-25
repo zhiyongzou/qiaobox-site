@@ -11,6 +11,7 @@
   <meta property="og:image" content="../assets/app-icon.png">
   <link rel="icon" href="../assets/app-icon.png">
   <link rel="stylesheet" href="../assets/style.css">
+  <script defer src="../assets/visit-counter.js" data-visit-counter-endpoint="/api/visit"></script>
   <!-- Cloudflare Web Analytics -->
   <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"5cec14cef8c54cd1b941dce773638ba0"}'></script>
   <!-- End Cloudflare Web Analytics -->
@@ -36,7 +37,10 @@
     <section class="hero">
       <div class="hero-inner">
         <div>
-          <p class="eyebrow">macOS 13.5+ · Version 1.0.0</p>
+          <p class="eyebrow">
+            macOS 13.5+ · Version 1.0.0
+            <span class="visit-counter" data-visit-counter hidden> · <span data-visit-count>...</span> visits</span>
+          </p>
           <h1>QiaoBox</h1>
           <p class="hero-copy">A native macOS desktop toolbox that brings document, image, QR code, and number conversion tasks into one lightweight local workspace.</p>
           <div class="hero-actions">

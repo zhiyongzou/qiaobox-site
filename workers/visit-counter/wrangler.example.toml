@@ -1,0 +1,12 @@
+name = "qiaobox-visit-counter"
+main = "worker.js"
+compatibility_date = "2026-06-25"
+
+[vars]
+ALLOWED_ORIGINS = "https://zhiyongzou.github.io"
+COUNTER_NAME = "qiaobox-site-total"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "qiaobox-visit-counter"
+database_id = "replace-with-your-d1-database-id"

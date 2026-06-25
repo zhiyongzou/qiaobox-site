@@ -118,6 +118,14 @@ img {
   font-weight: 700;
 }
 
+.visit-counter[hidden] {
+  display: none;
+}
+
+.visit-counter [data-visit-count] {
+  font-variant-numeric: tabular-nums;
+}
+
 .hero h1 {
   max-width: 11ch;
   margin: 0;
