@@ -28,6 +28,10 @@ body {
   line-height: 1.6;
 }
 
+body.is-lightbox-open {
+  overflow: hidden;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -210,6 +214,7 @@ img {
 
 .screenshot-frame {
   overflow: hidden;
+  margin: 0;
   border: 1px solid rgba(111, 128, 151, 0.25);
   border-radius: var(--radius);
   background: var(--surface);
@@ -223,9 +228,17 @@ img {
 
 .screenshot-frame img {
   width: 100%;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  object-position: top left;
+  height: auto;
+}
+
+.screenshot-zoom {
+  display: block;
+  cursor: zoom-in;
+}
+
+.screenshot-zoom:focus-visible {
+  outline: 3px solid rgba(23, 104, 209, 0.42);
+  outline-offset: 3px;
 }
 
 .section {
@@ -326,9 +339,69 @@ img {
 
 .markdown-visual img {
   width: 100%;
-  aspect-ratio: 16 / 10;
-  object-fit: cover;
-  object-position: top left;
+  height: auto;
+}
+
+.image-lightbox[hidden] {
+  display: none;
+}
+
+.image-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.image-lightbox-backdrop {
+  position: absolute;
+  inset: 0;
+  border: 0;
+  background: rgba(11, 18, 31, 0.72);
+  cursor: zoom-out;
+}
+
+.image-lightbox-frame {
+  position: relative;
+  z-index: 1;
+  max-width: min(1200px, 100%);
+  max-height: calc(100vh - 48px);
+  margin: 0;
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: 0 28px 90px rgba(0, 0, 0, 0.32);
+}
+
+.image-lightbox-frame img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  max-height: calc(100vh - 48px);
+  border-radius: var(--radius);
+}
+
+.image-lightbox-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid rgba(217, 225, 236, 0.9);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--ink);
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.image-lightbox-close:hover {
+  background: var(--surface);
 }
 
 .markdown-content h2 {
