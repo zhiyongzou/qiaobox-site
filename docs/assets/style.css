@@ -122,12 +122,17 @@ img {
   font-weight: 700;
 }
 
-.visit-counter[hidden] {
-  display: none;
+.hero-kicker {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
-.visit-counter [data-visit-count] {
-  font-variant-numeric: tabular-nums;
+.visit-badge {
+  display: inline-block;
+  width: auto;
+  height: 20px;
 }
 
 .hero h1 {
